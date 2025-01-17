@@ -1,5 +1,6 @@
 # Amazon Product Review Sentiment Analysis
-![Screenshot 2025-01-17 123513](https://github.com/user-attachments/assets/12179383-1868-4a70-b0e8-5fdef5eb3510)
+![proj_7](https://github.com/user-attachments/assets/d637dddb-d96b-4ae0-8da0-485dec134adb)
+
 
 ## Overview
 
