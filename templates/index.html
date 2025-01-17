@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Ensure background image styling with transparency */
+        body {
+            background-image: url('/static/reviews-stars.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+        }
+    </style>
+    <script>
+        // Clear the form values
+        function clearForm() {
+            document.querySelector('textarea[name="review"]').value = '';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Analysis Application</h1>
+        <form action="/predict" method="POST">
+            <textarea name="review" placeholder="Enter your review here..." rows="5" required>{{ review if review else '' }}</textarea>
+            <button type="submit">Analyze Sentiment</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </form>
+        {% if prediction_text %}
+        <div class="result">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
